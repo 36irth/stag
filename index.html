@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STAG UX Case Study Landing Page</title>
+    <meta
+      name="description"
+      content="STAG 콘서트 원정 플래너의 사용자 리서치, 서비스 기획, UI 설계와 메인 경험을 보여주는 UI/UX 포트폴리오 랜딩페이지"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skipLink" href="#mainContent">본문 바로가기</a>
+
+    <header class="siteHeader">
+      <nav class="siteNav" aria-label="STAG 포트폴리오 내비게이션">
+        <a class="brandMark" href="#hero" aria-label="STAG 맨 위로 이동">
+          <span>STAG</span>
+        </a>
+        <div class="navLinks">
+          <a href="#research">Research</a>
+          <a href="#problem">Problem</a>
+          <a href="#mainFlow">Main Flow</a>
+          <a href="#outcome">Outcome</a>
+        </div>
+        <a
+          class="navPrototypeButton"
+          href="https://www.figma.com/design/qcv8pcqbh7afaNIJrlO4mT/%EC%A0%9C%EB%AA%A9-%EC%97%86%EC%9D%8C?node-id=422-1177&t=9Xhsjf8QogEUPtcz-1"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Figma 디자인 새 창으로 열기"
+        >
+          View Design
+        </a>
+      </nav>
+    </header>
+
+    <div class="scrollProgress" aria-hidden="true">
+      <span class="scrollProgressBar"></span>
+    </div>
+
+    <div class="floatingActions" aria-label="페이지 주요 동작">
+      <a
+        class="prototypeDock"
+        href="https://www.figma.com/design/qcv8pcqbh7afaNIJrlO4mT/%EC%A0%9C%EB%AA%A9-%EC%97%86%EC%9D%8C?node-id=422-1177&t=9Xhsjf8QogEUPtcz-1"
+        target="_blank"
+        rel="noreferrer"
+      >
+        View Design
+      </a>
+      <button class="topButton" type="button" aria-label="맨 위로 이동">↑</button>
+    </div>
+
+    <main id="mainContent">
+      <section class="heroSection" id="hero">
+        <div class="heroShade" aria-hidden="true"></div>
+        <div class="sectionInner heroLayout">
+          <div class="heroCopy revealItem">
+            <div class="sectionIcon" aria-hidden="true">
+              <i data-lucide="ticket-check"></i>
+            </div>
+            <p class="eyebrowText">UI/UX PORTFOLIO / STAG CASE STUDY / MOBILE APP</p>
+            <h1>공연의 설렘은 남기고,<br />준비의 복잡함은 덜어내다.</h1>
+            <p class="heroLead">
+              공연장 주변의 장소 탐색부터 원정 일정, 동행인과의 협업, 공연 당일의 이동까지.
+              STAG는 등록한 공연을 중심으로 흩어진 준비 과정을 하나로 연결하는 콘서트 원정 플래너입니다.
+            </p>
+            <dl class="projectMeta" aria-label="프로젝트 정보">
+              <div>
+                <dt>Project</dt>
+                <dd>Personal UI/UX Project</dd>
+              </div>
+              <div>
+                <dt>Role</dt>
+                <dd>UX Research · Service Planning · UI Design</dd>
+              </div>
+              <div>
+                <dt>Output</dt>
+                <dd>Mobile UI · Figma Design</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="heroMockups revealItem" aria-label="STAG 대표 목업">
+            <figure class="phoneShell heroPhoneOne" data-slot-id="stag-home">
+              <img src="./assets/homeScreen.png" alt="STAG 홈 화면" />
+            </figure>
+            <figure class="phoneShell heroPhoneTwo" data-slot-id="stag-register">
+              <img src="./assets/registerScreen.png" alt="STAG 공연 등록 화면" />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="backgroundSection">
+        <div class="sectionInner twoColumnSection">
+          <div class="sectionHeading revealItem">
+            <p class="eyebrowText">BACKGROUND</p>
+            <h2>공연을 기다리는 시간, 준비할 것은 생각보다 많습니다.</h2>
+          </div>
+          <p class="largeParagraph revealItem">
+            콘서트를 보러 다른 지역으로 이동할 때는 교통편과 주변 장소를 찾고, 공연 시간에 맞춰 하루의 동선을 계획해야 합니다.
+            여러 명이 함께한다면 집합 시간과 각자의 준비 상황까지 조율해야 합니다. STAG는 공연 전후에 이어지는 이 준비 과정에 주목했습니다.
+          </p>
+        </div>
+      </section>
+
+      <section class="researchSection" id="research">
+        <div class="sectionInner">
+          <div class="researchIntro">
+            <div class="sectionHeading revealItem">
+              <div class="sectionIcon" aria-hidden="true">
+                <i data-lucide="bar-chart-3"></i>
+              </div>
+              <p class="eyebrowText">RESEARCH OVERVIEW</p>
+              <h2>사용자의 일정 관리 경험에서,<br />세 가지 문제를 발견했습니다.</h2>
+              <p>
+                18명을 대상으로 공연·여행 등 단체 일정의 준비 방식과 협업 경험, 당일 문제를 살펴봤습니다.
+                조사 대상은 20대 9명, 30대 9명이며 최근 1년간 공연 경험자는 7명, 여행 경험자는 15명입니다.
+              </p>
+            </div>
+            <aside class="researchCaution revealItem">
+              <strong>조사 한계</strong>
+              <p>
+                공연 경험자만으로 구성된 표본이 아닌 탐색적 조사입니다. 따라서 전체 공연 관람객을 대표하기보다
+                공연 원정을 주도적으로 계획하고 조율하는 사용자의 정보 구조와 협업 부담을 파악하는 데 초점을 맞췄습니다.
+              </p>
+            </aside>
+          </div>
+
+          <div class="findingGrid">
+            <article class="findingCard revealItem">
+              <span>Finding 01</span>
+              <h3>정보 분산</h3>
+              <ul>
+                <li>카카오톡으로 일정 계획 12명(66.7%)</li>
+                <li>준비 정보 분산 6명(33.3%)</li>
+                <li>지도 앱 활용 6명(33.3%)</li>
+              </ul>
+              <p>공연별 정보와 주변 장소, 일정 정보를 한 기준점으로 묶어 확인할 필요가 있었습니다.</p>
+            </article>
+            <article class="findingCard revealItem">
+              <span>Finding 02</span>
+              <h3>협업 부담</h3>
+              <ul>
+                <li>역할 집중 8명(44.4%)</li>
+                <li>의견 조율 지연 7명(38.9%)</li>
+                <li>동행인 초대·투표·확정 상태 필요</li>
+              </ul>
+              <p>채팅 속 의견을 다시 취합하는 상황을 줄이고, 결정 상태가 보이도록 설계해야 했습니다.</p>
+            </article>
+            <article class="findingCard revealItem">
+              <span>Finding 03</span>
+              <h3>당일 실행</h3>
+              <ul>
+                <li>집합 지연 8명(44.4%)</li>
+                <li>준비물 누락 7명(38.9%)</li>
+                <li>지금 해야 할 일 안내 긍정 12명(66.7%)</li>
+              </ul>
+              <p>합류 정보, 체크리스트, 알림과 일정 확인이 당일 행동 판단으로 이어져야 했습니다.</p>
+            </article>
+          </div>
+
+          <div class="insightBridge revealItem">
+            <div>
+              <strong>Finding</strong>
+              <span>정보 분산 · 조율 부담 · 당일 변수</span>
+            </div>
+            <div>
+              <strong>Insight</strong>
+              <span>공연을 기준점으로 준비 상태와 공동 결정을 구조화</span>
+            </div>
+            <div>
+              <strong>Design Decision</strong>
+              <span>공연별 홈, 크루·투표, 체크리스트, 플랜, 알림으로 연결</span>
+            </div>
+          </div>
+
+          <div class="chartPanel revealItem">
+            <div>
+              <p class="eyebrowText">FEATURE PREFERENCE</p>
+              <h3>기능 선호도</h3>
+              <p>N=18, 복수 선택 문항입니다. 각 항목의 합계는 100%를 초과할 수 있습니다.</p>
+            </div>
+            <div class="chartWrap">
+              <canvas id="researchChart" aria-label="기능 선호도 가로 막대 그래프"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="problemSection" id="problem">
+        <div class="sectionInner">
+          <div class="sectionHeading wideHeading revealItem">
+            <div class="sectionIcon" aria-hidden="true">
+              <i data-lucide="route"></i>
+            </div>
+            <p class="eyebrowText">PROBLEM DEFINITION & PERSONAS</p>
+            <h2>정보를 찾고, 의견을 모으고,<br />계획대로 움직이기까지.</h2>
+            <p class="statementText">
+              STAG가 다루는 문제는 하나의 기능 부족이 아니라 정보 분산, 의사결정 부담, 당일 실행 변수가 동시에 얽히는 과정입니다.
+            </p>
+          </div>
+
+          <div class="problemGrid">
+            <article class="problemCard revealItem">
+              <span>01 / INFORMATION</span>
+              <h3>공연별 준비 정보가 여러 앱과 대화 속에 흩어진다.</h3>
+            </article>
+            <article class="problemCard revealItem">
+              <span>02 / COORDINATION</span>
+              <h3>의견 수집과 확정 상태 관리가 계획 담당자에게 집중된다.</h3>
+            </article>
+            <article class="problemCard revealItem">
+              <span>03 / EXECUTION</span>
+              <h3>공연 당일에는 합류와 변경 사항을 빠르게 확인해야 한다.</h3>
+            </article>
+          </div>
+
+          <div class="personaGrid">
+            <article class="personaCard revealItem">
+              <figure class="personaPhoto">
+                <img src="./assets/personaKimSua.png" alt="김수아 페르소나 이미지" />
+              </figure>
+              <span>Primary · 가상 페르소나</span>
+              <h3>김수아 / 원정 계획 담당자</h3>
+              <p>
+                친구들과 콘서트 원정을 떠날 때 장소, 교통, 식사 동선을 정리하고 의견을 취합합니다.
+                관리와 의사결정에 필요한 정보가 우선이며, 통합 준비 현황과 조율 상태를 빠르게 확인하고 싶어 합니다.
+              </p>
+            </article>
+            <article class="personaCard revealItem">
+              <figure class="personaPhoto">
+                <img src="./assets/personaParkJiyeon.png" alt="박지연 페르소나 이미지" />
+              </figure>
+              <span>Secondary · 가상 페르소나</span>
+              <h3>박지연 / 일반 동행인</h3>
+              <p>
+                전체 일정을 계획하지는 않지만 투표에 참여하고, 확정된 일정과 개인 준비물, 합류 장소를 빠르게 확인하려는 사용자입니다.
+                확인, 참여, 실행에 필요한 정보가 우선입니다.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="strategySection" id="strategy">
+        <div class="sectionInner">
+          <div class="sectionHeading revealItem">
+            <div class="sectionIcon" aria-hidden="true">
+              <i data-lucide="workflow"></i>
+            </div>
+            <p class="eyebrowText">UX STRATEGY & FEATURE PRIORITIZATION</p>
+            <h2>준비부터 공연 당일까지,<br />하나의 흐름으로 연결하기 위해.</h2>
+          </div>
+          <div class="strategyGrid">
+            <article class="strategyCard revealItem">
+              <span>ORGANIZE</span>
+              <h3>공연을 정보의 기준점으로</h3>
+              <p>공연별 정보, 주변 장소, 일정과 준비 상태를 한 화면 구조 안에서 연결합니다.</p>
+            </article>
+            <article class="strategyCard revealItem">
+              <span>COLLABORATE</span>
+              <h3>의견 수집에서 결정까지</h3>
+              <p>크루, 투표, 체크리스트로 동행인의 참여와 확정 상태를 구분합니다.</p>
+            </article>
+            <article class="strategyCard revealItem">
+              <span>GUIDE</span>
+              <h3>계획과 실행의 우선순위 구분</h3>
+              <p>플랜과 알림은 현재 확인해야 할 정보와 다음 행동을 먼저 보여줍니다.</p>
+            </article>
+          </div>
+          <div class="journeyDiagram revealItem" aria-label="대표 서비스 구성 다이어그램">
+            <div class="journeyNode journeyNodePrimary">
+              <i data-lucide="ticket-check"></i>
+              <strong>공연별 정보</strong>
+              <span>등록 공연 중심 홈</span>
+            </div>
+            <div class="journeyNode">
+              <i data-lucide="map"></i>
+              <strong>장소 추천</strong>
+              <span>공연장 주변 탐색</span>
+            </div>
+            <div class="journeyNode">
+              <i data-lucide="users-round"></i>
+              <strong>크루·투표</strong>
+              <span>초대, 합류, 공동 결정</span>
+            </div>
+            <div class="journeyNode">
+              <i data-lucide="clipboard-check"></i>
+              <strong>체크·플랜</strong>
+              <span>준비물과 원정 일정</span>
+            </div>
+            <div class="journeyNode journeyNodePrimary">
+              <i data-lucide="bell"></i>
+              <strong>알림·기록</strong>
+              <span>업데이트와 후속 경험</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mainFlowSection" id="mainFlow">
+        <div class="sectionInner">
+          <div class="sectionHeading centeredHeading revealItem">
+            <div class="sectionIcon" aria-hidden="true">
+              <i data-lucide="smartphone"></i>
+            </div>
+            <p class="eyebrowText">MAIN EXPERIENCE</p>
+            <h2>공연을 준비하는 순간부터,<br />공연을 즐기는 순간까지.</h2>
+            <p>
+              공연별 준비 정보를 확인하고, 동행인과 일정을 조율하며 공연 당일 필요한 행동까지 이어지는 경험을 설계했습니다.
+              아래 순서는 설명을 위한 구성이며, 앱의 필수 선형 흐름을 의미하지 않습니다.
+            </p>
+          </div>
+          <div class="flowList" id="flowList" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section class="decisionSection" id="decisions">
+        <div class="sectionInner">
+          <div class="sectionHeading revealItem">
+            <div class="sectionIcon" aria-hidden="true">
+              <i data-lucide="sparkles"></i>
+            </div>
+            <p class="eyebrowText">DESIGN DECISIONS</p>
+            <h2>사용자의 상황에 맞춰,<br />정보의 우선순위를 설계했습니다.</h2>
+          </div>
+          <div class="decisionGrid">
+            <article class="decisionCard revealItem">
+              <span>Concert-centered</span>
+              <p>공연을 정보의 허브로 삼아 장소, 일정, 준비 상태를 연결했습니다.</p>
+            </article>
+            <article class="decisionCard revealItem">
+              <span>Shared Decision-making</span>
+              <p>초대, 투표, 합류 정보로 공동 의사결정의 현재 상태를 드러냅니다.</p>
+            </article>
+            <article class="decisionCard revealItem">
+              <span>Bottom Sheet Pattern</span>
+              <p>등록과 수정처럼 맥락을 유지해야 하는 작업은 바텀시트로 분리했습니다.</p>
+            </article>
+            <article class="decisionCard revealItem">
+              <span>Visible Status</span>
+              <p>완료와 미완료, 선택과 결과를 구분해 다음 행동을 쉽게 판단하게 합니다.</p>
+            </article>
+            <article class="decisionCard revealItem">
+              <span>Plan to Action</span>
+              <p>계획 단계의 정보와 당일 확인 정보가 서로 다른 우선순위를 갖도록 설계했습니다.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="outcomeSection" id="outcome">
+        <div class="sectionInner outcomeLayout">
+          <div class="outcomeCopy revealItem">
+            <div class="sectionIcon" aria-hidden="true">
+              <i data-lucide="flag"></i>
+            </div>
+            <p class="eyebrowText">OUTCOME & REFLECTION</p>
+            <h2>사용자의 문제에서 출발해,<br />하나의 원정 경험을 설계했습니다.</h2>
+            <p>
+              STAG는 공연 원정 준비 과정에서 발견한 정보 분산, 협업 부담, 당일 실행 문제를
+              공연별 홈, 크루와 투표, 체크리스트, 플랜, 알림의 구조로 연결한 개인 UI/UX 프로젝트입니다.
+              현재 단계에서는 설계 판단과 화면 구성안을 제시하며, 실제 사용성 검증 성과로 표현하지 않습니다.
+            </p>
+          </div>
+          <div class="reflectionPanel revealItem">
+            <h3>향후 검증할 UX 질문</h3>
+            <ul>
+              <li>공연별 홈이 필요한 준비 정보를 찾는 시간을 줄이는가?</li>
+              <li>초대, 투표, 합류 정보가 동행인의 합의 상태 이해를 돕는가?</li>
+              <li>체크리스트와 플랜이 준비물 누락과 일정 혼선을 줄이는가?</li>
+              <li>알림 화면이 변경된 정보를 다시 확인하는 진입점으로 작동하는가?</li>
+            </ul>
+            <p>
+              다음 단계에서는 과업 완료율, 탐색 시간, 오류, 만족도 지표를 기준으로 핵심 협업 기능과 일정 기능의 사용성을 확인할 계획입니다.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="closingSection">
+        <div class="sectionInner closingInner revealItem">
+          <p>공연을 기다리는 설렘이, 복잡한 준비에 가려지지 않도록.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="siteFooter">
+      <div class="sectionInner footerInner">
+        <span>STAG UX Case Study</span>
+        <span>STAG · Concert Trip Planner / Personal UI/UX Design Project</span>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
