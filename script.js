@@ -5,149 +5,239 @@ const featurePreference = {
 
 const flowSteps = [
   {
-    number: "01",
-    key: "onboard",
-    layout: "flowLayoutIntro",
-    icon: "sparkles",
-    title: "공연 원정의 시작을, 더 간단하게.",
-    copy: "스플래시, 온보딩, 로그인에서 서비스의 목적과 시작 흐름을 간결하게 연결합니다.",
-    uxFocus: "처음부터 모든 기능을 보여주기보다 핵심 가치와 시작 행동을 구분합니다.",
-    researchEvidence: "서비스 진입부는 조사 수치보다 이후 준비 경험을 이해하기 위한 맥락 전달에 집중했습니다.",
-    highlights: ["서비스 목적 인지", "시작 행동 안내", "간결한 진입 흐름"],
-    assets: [
-      { label: "스플래시", presentationType: "phone", status: "planned" },
-      { label: "온보딩", presentationType: "phone", status: "planned" },
-      { label: "로그인", presentationType: "phone", status: "planned" },
-    ],
+    "number": "01",
+    "key": "onboard",
+    "label": "시작 경험",
+    "title": "공연 원정의 시작, 어렵지 않게.",
+    "copy": "STAG와 함께할 준비를 시작해 보세요. 서비스를 알아보고 간단한 흐름으로 시작할 수 있어요.",
+    "featured": false,
+    "assets": [
+      {
+        "id": "splash",
+        "label": "스플래시",
+        "src": null,
+        "presentationType": "phone"
+      },
+      {
+        "id": "onboarding",
+        "label": "온보딩",
+        "src": "./assets/onboardingScreen.png",
+        "presentationType": "phone"
+      },
+      {
+        "id": "login",
+        "label": "로그인",
+        "src": null,
+        "presentationType": "phone"
+      }
+    ]
   },
   {
-    number: "02",
-    key: "home",
-    layout: "flowLayoutFocus",
-    icon: "home",
-    title: "등록한 공연을 중심으로, 준비 상황을 한눈에.",
-    copy: "공연 D-day, 지금 해야 할 일, 크루 현황 및 아카이브 진입점을 확인합니다.",
-    uxFocus: "공연을 서비스의 정보 기준점으로 삼고 해야 할 일과 현황을 정보 위계에 따라 배치합니다.",
-    researchEvidence: "카카오톡으로 일정 계획 12/18, 준비 정보 분산 6/18 응답을 공연별 정보 통합 방향으로 연결했습니다.",
-    highlights: ["D-day", "지금 해야 할 일", "크루 현황", "아카이브 진입"],
-    assets: [
-      { label: "홈 전체 화면", src: "./assets/homeScreen.png", presentationType: "phone", status: "ready" },
-      { label: "D-day 정보", presentationType: "component", status: "designed" },
-      { label: "해야 할 일·크루 상태", presentationType: "component", status: "designed" },
-    ],
+    "number": "02",
+    "key": "home",
+    "label": "홈",
+    "title": "우리의 원정 준비, 한눈에 확인해요.",
+    "copy": "공연 D-day부터 남은 할 일과 크루 현황까지. 등록한 공연을 중심으로 필요한 정보를 확인할 수 있어요.",
+    "featured": true,
+    "assets": [
+      {
+        "id": "home-main",
+        "label": "홈 메인",
+        "src": "./assets/homeScreen.png",
+        "presentationType": "phone"
+      },
+      {
+        "id": "home-status",
+        "label": "D-day · 할 일 · 크루 현황",
+        "src": null,
+        "presentationType": "component"
+      }
+    ]
   },
   {
-    number: "03",
-    key: "explore",
-    layout: "flowLayoutGallery",
-    icon: "map",
-    title: "공연장 주변에서, 원정에 필요한 장소를 찾습니다.",
-    copy: "플랜에 포함된 공연장 주변 숙소·맛집·카페 추천 카드를 기준으로 장소 탐색 경험을 설명합니다.",
-    uxFocus: "일반 지도 검색이 아니라 등록된 공연장의 위치를 탐색 출발점으로 사용합니다.",
-    researchEvidence: "지도 앱 활용 6/18 응답을 공연장 기준 주변 정보 탐색 요구로 해석했습니다.",
-    highlights: ["공연장 기준 탐색", "추천 카드", "일정 연결은 향후 상세 시안에서 확정"],
-    assets: [
-      { label: "주변 장소 추천 구간", src: "./assets/planScreen.png", presentationType: "component", status: "ready" },
-      { label: "추천 카드 확대", presentationType: "component", status: "designed" },
-      { label: "장소 상세 연결", presentationType: "placeholder", status: "planned" },
-    ],
+    "number": "03",
+    "key": "explore",
+    "label": "주변 장소",
+    "title": "공연장 주변, 어디가 좋을까?",
+    "copy": "공연장 주변의 숙소와 맛집, 카페까지. 원정에 필요한 장소를 공연장 중심으로 살펴보세요.",
+    "featured": false,
+    "assets": [
+      {
+        "id": "explore-cards",
+        "label": "공연장 주변 장소 추천",
+        "src": null,
+        "presentationType": "component"
+      }
+    ]
   },
   {
-    number: "04",
-    key: "crew",
-    layout: "flowLayoutShowcase",
-    icon: "users-round",
-    title: "함께 움직이는 원정, 합류 정보까지 한곳에서.",
-    copy: "크루원 초대부터 합류 관리, 합류 정보 등록까지 동행인 간의 서로 다른 준비 상태를 확인합니다.",
-    uxFocus: "원정 전체의 공동 정보와 각자의 합류 시간을 구분해 표현합니다.",
-    researchEvidence: "집합 지연 경험 8/18을 크루와 합류 정보 관리 문제로 연결했습니다. 해결 효과가 검증됐다고 주장하지 않습니다.",
-    highlights: ["크루 메인", "크루원 초대", "합류 정보 등록", "합류 관리"],
-    assets: [
-      { label: "크루 메인", presentationType: "phone", status: "designed" },
-      { label: "크루원 초대", presentationType: "bottomSheet", status: "designed" },
-      { label: "합류 정보 등록", presentationType: "bottomSheet", status: "designed" },
-      { label: "합류 관리", presentationType: "component", status: "designed" },
-    ],
+    "number": "04",
+    "key": "crew",
+    "label": "크루·합류",
+    "title": "함께 가는 공연이라면, 준비도 함께.",
+    "copy": "크루를 초대하고 서로의 합류 정보를 공유해 보세요. 누구와 어디서 만나는지 쉽게 확인할 수 있어요.",
+    "featured": true,
+    "assets": [
+      {
+        "id": "crew-main",
+        "label": "크루 메인",
+        "src": null,
+        "presentationType": "phone"
+      },
+      {
+        "id": "crew-invite",
+        "label": "크루원 초대",
+        "src": null,
+        "presentationType": "bottomSheet"
+      },
+      {
+        "id": "crew-join",
+        "label": "합류 정보 등록",
+        "src": null,
+        "presentationType": "bottomSheet"
+      },
+      {
+        "id": "crew-status",
+        "label": "합류 관리",
+        "src": null,
+        "presentationType": "component"
+      }
+    ]
   },
   {
-    number: "05",
-    key: "vote",
-    layout: "flowLayoutArc",
-    icon: "vote",
-    title: "서로 다른 의견을 모아, 함께 결정합니다.",
-    copy: "투표 목록에서 안건을 확인하고 투표를 등록·참여하며 현재 의사결정 상태를 확인합니다.",
-    uxFocus: "투표 등록, 선택, 결과 상태를 구분해 채팅 속 의견을 다시 취합해야 하는 상황에 대응합니다.",
-    researchEvidence: "역할 집중 8/18, 의견 조율 지연 7/18 응답을 공동 의사결정 구조로 연결했습니다.",
-    highlights: ["투표 목록", "투표 등록", "선택 상태", "결과 상태"],
-    assets: [
-      { label: "투표 화면", src: "./assets/voteScreen.png", presentationType: "phone", status: "ready" },
-      { label: "투표 등록", presentationType: "bottomSheet", status: "designed" },
-      { label: "선택·결과 상태", presentationType: "stateComparison", status: "designed" },
-    ],
+    "number": "05",
+    "key": "vote",
+    "label": "투표",
+    "title": "어디서 만날지 고민된다면? 투표로 정해요.",
+    "copy": "선택지를 만들고 친구들의 의견을 모아보세요. 투표 현황과 결과를 한눈에 확인할 수 있어요.",
+    "featured": true,
+    "assets": [
+      {
+        "id": "vote-main",
+        "label": "투표 메인",
+        "src": "./assets/voteScreen.png",
+        "presentationType": "phone"
+      },
+      {
+        "id": "vote-create",
+        "label": "투표 등록",
+        "src": null,
+        "presentationType": "bottomSheet"
+      },
+      {
+        "id": "vote-states",
+        "label": "참여 · 결과 상태",
+        "src": null,
+        "presentationType": "component"
+      }
+    ]
   },
   {
-    number: "06",
-    key: "prepare",
-    layout: "flowLayoutShowcase",
-    icon: "list-checks",
-    title: "챙겨야 할 것과 남은 준비를 분명하게.",
-    copy: "체크리스트 상세에서 항목을 확인하고 등록·수정합니다. 완료와 미완료가 보이는 상태를 중심으로 보여줍니다.",
-    uxFocus: "단순 목록이 아니라 관리 가능한 작업으로 구성해 준비 상태가 드러나도록 합니다.",
-    researchEvidence: "준비물 누락 경험 7/18을 체크리스트 등록, 수정, 완료 상태의 설계 근거로 연결했습니다.",
-    highlights: ["체크리스트 상세", "체크리스트 등록", "체크리스트 수정", "완료 상태"],
-    assets: [
-      { label: "체크리스트 상세", presentationType: "phone", status: "designed" },
-      { label: "체크리스트 등록", presentationType: "bottomSheet", status: "designed" },
-      { label: "체크리스트 수정", presentationType: "bottomSheet", status: "designed" },
-      { label: "완료 상태 컴포넌트", presentationType: "component", status: "designed" },
-    ],
+    "number": "06",
+    "key": "prepare",
+    "label": "체크리스트",
+    "title": "응원봉 챙겼어? 티켓은?",
+    "copy": "놓치기 쉬운 준비물도 체크리스트로 꼼꼼하게. 필요한 항목을 추가하고 완료한 준비를 확인해 보세요.",
+    "featured": true,
+    "assets": [
+      {
+        "id": "checklist-main",
+        "label": "체크리스트",
+        "src": null,
+        "presentationType": "phone"
+      },
+      {
+        "id": "checklist-create",
+        "label": "항목 등록",
+        "src": null,
+        "presentationType": "bottomSheet"
+      },
+      {
+        "id": "checklist-edit",
+        "label": "항목 수정",
+        "src": null,
+        "presentationType": "bottomSheet"
+      },
+      {
+        "id": "checklist-states",
+        "label": "완료 · 미완료 상태",
+        "src": null,
+        "presentationType": "component"
+      }
+    ]
   },
   {
-    number: "07",
-    key: "plan",
-    layout: "flowLayoutFocus",
-    icon: "calendar-clock",
-    title: "공연 시간을 기준으로, 하루의 흐름을 계획합니다.",
-    copy: "공연 시작 시간을 기준점으로 호텔 체크인, 카페, 공연장 입장 같은 시간별 활동을 확인하고 일정을 추가합니다.",
-    uxFocus: "공연 시작 시각이라는 고정된 제약을 중심으로 타임라인을 읽도록 구성합니다.",
-    researchEvidence: "일정 관리 10/18 선호와 위치·교통 정보 10/18 선호를 공연 시간 중심 플랜으로 연결했습니다.",
-    highlights: ["플랜 메인", "일정 등록", "타임라인 블록", "장소 추천 연결"],
-    assets: [
-      { label: "플랜 전체 화면", src: "./assets/planScreen.png", presentationType: "phone", status: "ready" },
-      { label: "일정 등록", presentationType: "bottomSheet", status: "designed" },
-      { label: "타임라인 시간 블록", presentationType: "component", status: "designed" },
-    ],
+    "number": "07",
+    "key": "plan",
+    "label": "플랜",
+    "title": "공연 시간에 맞춰, 하루를 계획해요.",
+    "copy": "카페부터 호텔 체크인, 공연장 입장까지. 시간별 일정을 정리하고 원정의 하루를 한눈에 살펴보세요.",
+    "featured": true,
+    "assets": [
+      {
+        "id": "plan-main",
+        "label": "시간별 플랜",
+        "src": "./assets/planScreen.png",
+        "presentationType": "phone"
+      },
+      {
+        "id": "plan-create",
+        "label": "일정 등록",
+        "src": null,
+        "presentationType": "bottomSheet"
+      },
+      {
+        "id": "plan-timeline",
+        "label": "타임라인 시간 블록",
+        "src": null,
+        "presentationType": "component"
+      }
+    ]
   },
   {
-    number: "08",
-    key: "update",
-    layout: "flowLayoutPair",
-    icon: "bell",
-    title: "변경된 정보도, 놓치지 않고 확인하도록.",
-    copy: "알림 화면에서 원정과 크루 활동에 관한 업데이트를 확인하도록 구성합니다.",
-    uxFocus: "알림은 현황을 다시 확인하는 진입점입니다. 별도로 디자인되지 않은 D-day 전용 화면이나 실시간 추적 기능은 만들지 않습니다.",
-    researchEvidence: "지금 해야 할 일 안내 긍정 12/18 응답을 알림과 상태 확인의 필요성으로 연결했습니다.",
-    highlights: ["알림 전체 화면", "업데이트 카드", "현황 재진입"],
-    assets: [
-      { label: "알림 전체 화면", src: "./assets/alertScreen.png", presentationType: "phone", status: "ready" },
-      { label: "알림 카드 확대", presentationType: "component", status: "designed" },
-    ],
+    "number": "08",
+    "key": "update",
+    "label": "알림",
+    "title": "달라진 일정도 놓치지 않게.",
+    "copy": "원정 일정과 크루 활동에 관한 새로운 소식을 알림에서 확인해 보세요.",
+    "featured": false,
+    "assets": [
+      {
+        "id": "alert-main",
+        "label": "알림",
+        "src": "./assets/alertScreen.png",
+        "presentationType": "phone"
+      },
+      {
+        "id": "alert-card",
+        "label": "업데이트 알림",
+        "src": null,
+        "presentationType": "component"
+      }
+    ]
   },
   {
-    number: "09",
-    key: "archive",
-    layout: "flowLayoutPair",
-    icon: "archive",
-    title: "공연이 끝나도, 함께한 원정의 기록은 남습니다.",
-    copy: "완료된 공연과 원정의 지난 일정·기록을 다시 살펴보는 후속 경험을 제안합니다.",
-    uxFocus: "기록 기능 선호 3/18명을 고려해 핵심 협업·일정보다 낮은 비중의 확장 방향으로 표현합니다.",
-    researchEvidence: "아카이브는 제작 예정 영역으로 유지하되, 완성 화면처럼 보이도록 꾸미지 않습니다.",
-    highlights: ["제작 예정", "완료 공연", "지난 일정", "후속 경험"],
-    assets: [
-      { label: "아카이브 목록", presentationType: "placeholder", status: "planned" },
-      { label: "아카이브 상세", presentationType: "placeholder", status: "planned" },
-    ],
-  },
+    "number": "09",
+    "key": "archive",
+    "label": "아카이브",
+    "title": "공연이 끝나도, 우리의 기록은 계속되니까.",
+    "copy": "함께했던 원정의 지난 일정과 기록을 언제든 다시 살펴보세요.",
+    "featured": false,
+    "assets": [
+      {
+        "id": "archive-list",
+        "label": "아카이브 목록",
+        "src": null,
+        "presentationType": "phone"
+      },
+      {
+        "id": "archive-detail",
+        "label": "아카이브 상세",
+        "src": null,
+        "presentationType": "phone"
+      }
+    ]
+  }
 ];
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -185,160 +275,39 @@ function initSmoothScroll() {
   return lenis;
 }
 
-function createHighlightList(items) {
-  return `
-    <ul class="flowHighlightList">
-      ${items.map((item) => `<li>${item}</li>`).join("")}
-    </ul>
-  `;
-}
-
-function createPhoneShell(asset, content, assetClass = "flowAssetPhone", frameClass = "") {
-  return `
-    <div class="screenSlot flowAsset ${assetClass}">
-      <p class="screenLabel">${asset.label}</p>
-      <figure class="phoneFrame flowPhoneFrame ${frameClass}">
-        ${content}
-      </figure>
-    </div>
-  `;
-}
-
-function createPhoneAsset(asset) {
-  const content = asset.src
-    ? `<img src="${asset.src}" alt="${asset.label} 화면" />`
-    : `<div class="phoneScreenContent screenConcept">
-        <i data-lucide="smartphone"></i>
-        <strong>${asset.label}</strong>
-        <span>${asset.status === "planned" ? "화면 제작 예정" : "실제 UI 형태 기반 구성"}</span>
-      </div>`;
-
-  return createPhoneShell(asset, content);
-}
-
-function createBottomSheetAsset(asset) {
-  const content = `
-    <div class="phoneScreenContent phoneScreenSheet">
-      <figure class="bottomSheetFrame" aria-label="${asset.label} 바텀시트">
-        <span class="sheetHandle"></span>
-        <div class="sheetHeader">
-          <strong>${asset.label}</strong>
-          <small>Bottom sheet</small>
-        </div>
-        <div class="sheetRows" aria-hidden="true">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <button type="button" tabindex="-1">확인</button>
-      </figure>
-    </div>
-  `;
-
-  return createPhoneShell(asset, content, "flowAssetSheet", "flowFrameSheet");
-}
-
-function createComponentAsset(asset) {
-  const content = `
-    <div class="phoneScreenContent phoneScreenComponent">
-      <figure class="componentFrame">
-        ${asset.src ? `<img src="${asset.src}" alt="${asset.label} UI" />` : ""}
-        <div>
-          <strong>${asset.label}</strong>
-          <span>${asset.status === "planned" ? "향후 상세 시안에서 확정" : "주요 UI 요소 확대"}</span>
-        </div>
-      </figure>
-    </div>
-  `;
-
-  return createPhoneShell(asset, content, "flowAssetComponent", "flowFrameComponent");
-}
-
-function createStateComparisonAsset(asset) {
-  const content = `
-    <div class="phoneScreenContent phoneScreenState">
-      <figure class="stateFrame">
-        <div>
-          <span>Before</span>
-          <strong>선택 전</strong>
-        </div>
-        <div>
-          <span>After</span>
-          <strong>결과 확인</strong>
-        </div>
-      </figure>
-    </div>
-  `;
-
-  return createPhoneShell(asset, content, "flowAssetState", "flowFrameState");
-}
-
-function createPlaceholderAsset(asset) {
-  const content = `
-    <div class="phoneScreenContent phoneScreenPlanned">
-      <figure class="plannedFrame">
-        <i data-lucide="plus"></i>
-        <strong>${asset.label}</strong>
-        <span>제작 예정 화면</span>
-      </figure>
-    </div>
-  `;
-
-  return createPhoneShell(asset, content, "flowAssetPlaceholder", "flowFramePlanned");
-}
-
 function createAsset(asset) {
-  switch (asset.presentationType) {
-    case "phone":
-      return createPhoneAsset(asset);
-    case "bottomSheet":
-      return createBottomSheetAsset(asset);
-    case "component":
-      return createComponentAsset(asset);
-    case "stateComparison":
-      return createStateComparisonAsset(asset);
-    default:
-      return createPlaceholderAsset(asset);
-  }
+  const source = window.STAG_ASSETS?.[asset.id] || asset.src;
+  const type = asset.presentationType;
+  return `<figure class="featureAsset asset-${type} ${source ? 'hasImage' : 'emptyAsset'}" data-slot-id="${asset.id}">
+    <div class="assetSurface">${source ? `<img src="${source}" alt="${asset.label} 화면" loading="lazy" decoding="async" />` : `<div class="neutralSlot" role="img" aria-label="${asset.label} 이미지 영역"><span class="slotMark" aria-hidden="true">STAG</span><span>${asset.label}</span></div>`}</div><figcaption>${asset.label}</figcaption></figure>`;
 }
 
 function renderFlowSteps() {
-  const flowList = document.getElementById("flowList");
+  const list = document.getElementById('flowList');
+  if (!list) return;
+  list.innerHTML = flowSteps.map(step => `<article class="featureStory revealItem ${step.featured ? 'featureMajor' : 'featureCompact'} feature-${step.key}" id="${step.key}" data-flow-key="${step.key}"><div class="featureCopy"><p class="featureLabel">${step.number} / ${step.label}</p><h3>${step.title}</h3><p>${step.copy}</p>${step.key === 'explore' ? '<a class="textLink" href="#plan">하루의 플랜으로 이어보기 →</a>' : ''}</div><div class="featureStage">${step.assets.map(createAsset).join('')}</div></article>`).join('');
+  list.querySelectorAll('img').forEach(img => img.addEventListener('error', () => {
+    const figure = img.closest('.featureAsset');
+    const label = figure.querySelector('figcaption').textContent;
+    figure.classList.replace('hasImage', 'emptyAsset');
+    const slot = document.createElement('div');
+    slot.className = 'neutralSlot'; slot.setAttribute('role','img'); slot.setAttribute('aria-label', label + ' 이미지 영역');
+    const mark = document.createElement('span'); mark.className = 'slotMark'; mark.textContent = 'STAG'; mark.setAttribute('aria-hidden','true');
+    const caption = document.createElement('span'); caption.textContent = label;
+    slot.append(mark,caption); img.replaceWith(slot);
+  }, {once:true}));
+}
 
-  if (!flowList) {
-    return;
-  }
-
-  flowList.innerHTML = flowSteps
-    .map(
-      (step) => `
-        <article class="flowArticle revealItem" id="${step.key}" data-flow-key="${step.key}">
-          <div class="flowContent">
-            <div class="flowKicker">
-              <span class="flowNumber">${step.number}</span>
-              <span class="flowIcon" aria-hidden="true"><i data-lucide="${step.icon}"></i></span>
-            </div>
-            <h3>${step.title}</h3>
-            <p class="flowLead">${step.copy}</p>
-            <div class="flowFocusGrid">
-              <div>
-                <span>UX Focus</span>
-                <p>${step.uxFocus}</p>
-              </div>
-              <div>
-                <span>Research Link</span>
-                <p>${step.researchEvidence}</p>
-              </div>
-            </div>
-            ${createHighlightList(step.highlights)}
-          </div>
-          <div class="mockupGrid ${step.layout}">
-            ${step.assets.map(createAsset).join("")}
-          </div>
-        </article>
-      `
-    )
-    .join("");
+function initDesignLinks() {
+  const config = window.STAG_LINKS;
+  const isPrototype = config.kind === 'prototype';
+  document.querySelectorAll('[data-design-link]').forEach(link => {
+    link.href = config.url;
+    link.textContent = isPrototype ? '프로토타입 살펴보기 ↗' : '디자인 살펴보기 ↗';
+    link.setAttribute('aria-label', isPrototype ? 'Figma 프로토타입 새 창으로 열기' : 'Figma 디자인 새 창으로 열기');
+    link.rel = 'noopener noreferrer';
+  });
+  document.querySelectorAll('[data-design-context]').forEach(el => el.textContent = isPrototype ? 'Figma 실행형 프로토타입으로 이동합니다.' : 'Figma 디자인 파일로 이동합니다.');
 }
 
 function initChart() {
@@ -378,7 +347,7 @@ function initChart() {
         },
       },
       animation: {
-        duration: 900,
+        duration: prefersReducedMotion ? 0 : 900,
         easing: "easeOutQuart",
       },
       scales: {
@@ -430,6 +399,11 @@ function initChartAnimation(chart) {
     chart.data.datasets[0].data = featurePreference.values;
     chart.update();
   };
+
+  if (prefersReducedMotion) {
+    fillChart();
+    return;
+  }
 
   if (typeof ScrollTrigger !== "undefined" && typeof gsap !== "undefined") {
     ScrollTrigger.create({
@@ -501,16 +475,16 @@ function initMotion() {
     },
   });
 
-  gsap.utils.toArray(".flowArticle").forEach((article) => {
-    const assets = article.querySelectorAll(".flowAsset");
+  gsap.utils.toArray(".featureStory").forEach((article) => {
+    const assets = article.querySelectorAll(".featureAsset");
     gsap.fromTo(
       assets,
-      { y: 28, opacity: 0.86 },
+      { y: 32, opacity: 0 },
       {
         y: 0,
         opacity: 1,
-        duration: 0.9,
-        stagger: 0.08,
+        duration: 0.75,
+        stagger: 0.12,
         ease: "power3.out",
         scrollTrigger: {
           trigger: article,
@@ -520,32 +494,69 @@ function initMotion() {
     );
   });
 
-  if (!window.matchMedia("(pointer: fine)").matches) {
-    return;
-  }
-
-  gsap.utils.toArray(".strategyCard, .decisionCard, .findingCard").forEach((card) => {
-    const rotateXTo = gsap.quickTo(card, "rotateX", { duration: 0.22, ease: "power2.out" });
-    const rotateYTo = gsap.quickTo(card, "rotateY", { duration: 0.22, ease: "power2.out" });
-
-    card.addEventListener("pointermove", (event) => {
-      const rect = card.getBoundingClientRect();
-      const x = (event.clientX - rect.left - rect.width / 2) / rect.width;
-      const y = (event.clientY - rect.top - rect.height / 2) / rect.height;
-      card.style.transformPerspective = "700px";
-      rotateXTo(y * -2.4);
-      rotateYTo(x * 3.2);
+  gsap.utils.toArray(".valueCards").forEach((group) => {
+    gsap.from(group.children, {
+      y: 24,
+      opacity: 0,
+      duration: 0.65,
+      stagger: 0.12,
+      ease: "power3.out",
+      scrollTrigger: { trigger: group, start: "top 88%", once: true },
     });
+  });
 
-    card.addEventListener("pointerleave", () => {
-      gsap.to(card, {
-        rotateX: 0,
-        rotateY: 0,
-        y: 0,
-        duration: 0.35,
-        ease: "power2.out",
-      });
+  gsap.from(".prototypeVisual", {
+    y: 28, scale: 0.96, opacity: 0, duration: 0.85, ease: "power3.out",
+    scrollTrigger: { trigger: ".prototypeVisual", start: "top 85%", once: true },
+  });
+}
+
+function initMockupViewer(lenis) {
+  const dialog = document.createElement("dialog");
+  dialog.className = "imageViewer";
+  dialog.setAttribute("aria-labelledby", "viewerTitle");
+  dialog.innerHTML = `<div class="viewerHeader"><h2 id="viewerTitle">화면 자세히 보기</h2><button class="viewerClose" type="button" aria-label="화면 닫기">×</button></div><div class="viewerBody" data-lenis-prevent><img alt="" /></div>`;
+  document.body.append(dialog);
+  const image = dialog.querySelector("img");
+  let opener = null;
+  document.querySelectorAll(".featureAsset.hasImage .assetSurface, .heroMockups .phoneShell").forEach(surface => {
+    const source = surface.querySelector("img");
+    if (!source) return;
+    const button = document.createElement("button");
+    button.className = "mockupPreview";
+    button.type = "button";
+    button.setAttribute("aria-label", `${source.alt} 크게 보기`);
+    button.setAttribute("aria-haspopup", "dialog");
+    source.replaceWith(button);
+    button.append(source);
+    const hint = document.createElement("span");
+    hint.className = "previewHint";
+    hint.setAttribute("aria-hidden", "true");
+    hint.textContent = "⤢";
+    button.append(hint);
+    button.addEventListener("click", () => {
+      if (!source.naturalWidth) return;
+      opener = button;
+      image.src = source.currentSrc || source.src;
+      image.alt = source.alt;
+      dialog.querySelector("h2").textContent = source.alt;
+      lenis?.stop();
+      document.documentElement.classList.add("viewerOpen");
+      dialog.showModal();
+      dialog.querySelector(".viewerBody").scrollTop = 0;
+      if (!prefersReducedMotion) dialog.animate([{opacity: 0, transform: "translateY(12px) scale(.98)"}, {opacity: 1, transform: "none"}], {duration: 220, easing: "ease-out"});
     });
+  });
+  dialog.querySelector(".viewerClose").addEventListener("click", () => dialog.close());
+  dialog.addEventListener("click", event => {
+    if (event.target !== dialog) return;
+    const rect = dialog.getBoundingClientRect();
+    if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
+  });
+  dialog.addEventListener("close", () => {
+    document.documentElement.classList.remove("viewerOpen");
+    lenis?.start();
+    opener?.focus({preventScroll: true});
   });
 }
 
@@ -553,12 +564,13 @@ function initHeader(lenis) {
   const nav = document.querySelector(".siteNav");
   const progressBar = document.querySelector(".scrollProgressBar");
   const topButton = document.querySelector(".topButton");
+  const navGroups = [["problem", "problem"], ["solution", "problem"], ["mainFlow", "mainFlow"], ["research", "research"], ["prototype", "prototype"], ["closing", "prototype"]];
 
   if (!nav) {
     return;
   }
 
-  window.addEventListener("scroll", () => {
+  const updateHeader = () => {
     const scrollTop = window.scrollY;
     const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
     const progress = maxScroll > 0 ? (scrollTop / maxScroll) * 100 : 0;
@@ -572,7 +584,17 @@ function initHeader(lenis) {
     if (topButton) {
       topButton.classList.toggle("isVisible", scrollTop > 520);
     }
-  });
+    let active = "";
+    navGroups.forEach(([id, group]) => {
+      if (document.getElementById(id)?.getBoundingClientRect().top <= window.innerHeight * 0.35) active = group;
+    });
+    nav.querySelectorAll('.navLinks a').forEach(link => {
+      if (link.hash === `#${active}`) link.setAttribute("aria-current", "location");
+      else link.removeAttribute("aria-current");
+    });
+  };
+  window.addEventListener("scroll", updateHeader, {passive: true});
+  updateHeader();
 
   if (topButton) {
     topButton.addEventListener("click", () => {
@@ -588,7 +610,7 @@ function initHeader(lenis) {
     });
   }
 
-  document.querySelectorAll(".brandMark, .navLinks a").forEach((link) => {
+  document.querySelectorAll('.brandMark, .navLinks a, a[href="#mainFlow"], .textLink').forEach((link) => {
     link.addEventListener("click", (event) => {
       const href = link.getAttribute("href");
 
@@ -620,7 +642,7 @@ function initHeader(lenis) {
 }
 
 function initPrototypeAnchors() {
-  document.querySelectorAll(".prototypeDock, .navPrototypeButton").forEach((link) => {
+  document.querySelectorAll(".prototypeDock, .navPrototypeButton, .serviceCTA").forEach((link) => {
     link.addEventListener("pointerenter", () => {
       if (typeof gsap === "undefined" || prefersReducedMotion) {
         return;
@@ -656,7 +678,9 @@ function initIcons() {
 document.addEventListener("DOMContentLoaded", () => {
   const lenis = initSmoothScroll();
   renderFlowSteps();
+  initDesignLinks();
   initIcons();
+  initMockupViewer(lenis);
   if (lenis && typeof lenis.resize === "function") {
     lenis.resize();
   }

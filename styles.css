@@ -3120,3 +3120,265 @@ li,
     grid-template-columns: minmax(0, var(--flowSlotWidth));
   }
 }
+
+/* Final responsive polish: keep flow mockups inside the viewport and clarify type hierarchy. */
+.mainFlowSection .sectionInner {
+  width: min(1280px, calc(100% - clamp(32px, 5vw, 72px)));
+}
+
+.mainFlowSection .flowArticle {
+  grid-template-columns: minmax(248px, 0.45fr) minmax(0, 1.55fr);
+  gap: clamp(30px, 3.6vw, 58px);
+}
+
+.mainFlowSection .flowArticle:nth-child(even) {
+  grid-template-columns: minmax(0, 1.55fr) minmax(248px, 0.45fr);
+}
+
+.mainFlowSection .mockupGrid {
+  --flowGridGap: clamp(12px, 1.2vw, 20px);
+  width: 100%;
+  max-width: 100%;
+  justify-self: center;
+  justify-content: center;
+  gap: var(--flowGridGap);
+  overflow: visible;
+}
+
+.flowArticle[data-flow-key="home"] .mockupGrid,
+.flowArticle[data-flow-key="explore"] .mockupGrid,
+.flowArticle[data-flow-key="vote"] .mockupGrid,
+.flowArticle[data-flow-key="plan"] .mockupGrid,
+.flowArticle[data-flow-key="onboard"] .mockupGrid {
+  --flowColumns: 3;
+  --flowSlotWidth: clamp(206px, 16.5vw, 248px);
+  grid-template-columns: repeat(var(--flowColumns), minmax(0, 1fr));
+  max-width: calc((var(--flowSlotWidth) * var(--flowColumns)) + (var(--flowGridGap) * (var(--flowColumns) - 1)));
+  min-height: clamp(500px, 39vw, 580px);
+}
+
+.flowArticle[data-flow-key="crew"] .mockupGrid,
+.flowArticle[data-flow-key="prepare"] .mockupGrid {
+  --flowColumns: 4;
+  --flowSlotWidth: clamp(168px, 12.8vw, 194px);
+  --flowGridGap: clamp(10px, 0.9vw, 14px);
+  grid-template-columns: repeat(var(--flowColumns), minmax(0, 1fr));
+  max-width: calc((var(--flowSlotWidth) * var(--flowColumns)) + (var(--flowGridGap) * (var(--flowColumns) - 1)));
+  min-height: clamp(430px, 32vw, 500px);
+}
+
+.flowArticle[data-flow-key="update"] .mockupGrid,
+.flowArticle[data-flow-key="archive"] .mockupGrid {
+  --flowColumns: 2;
+  --flowSlotWidth: clamp(238px, 19vw, 292px);
+  --flowGridGap: clamp(18px, 1.6vw, 28px);
+  grid-template-columns: repeat(var(--flowColumns), minmax(0, 1fr));
+  max-width: calc((var(--flowSlotWidth) * var(--flowColumns)) + var(--flowGridGap));
+  min-height: clamp(540px, 42vw, 640px);
+}
+
+.mainFlowSection .flowArticle .mockupGrid .screenSlot,
+.mainFlowSection .flowArticle .mockupGrid .flowAsset,
+.mainFlowSection .flowArticle .mockupGrid .flowAssetPhone,
+.mainFlowSection .flowArticle .mockupGrid .flowAssetSheet,
+.mainFlowSection .flowArticle .mockupGrid .flowAssetComponent,
+.mainFlowSection .flowArticle .mockupGrid .flowAssetState,
+.mainFlowSection .flowArticle .mockupGrid .flowAssetPlaceholder {
+  width: min(100%, var(--flowSlotWidth)) !important;
+  justify-self: center;
+}
+
+.flowContent {
+  max-width: 500px;
+}
+
+h1 {
+  max-width: 620px;
+  margin-bottom: 22px;
+  color: rgba(21, 21, 21, 0.84);
+  font-size: clamp(34px, 4vw, 54px);
+  line-height: 1.08;
+  font-weight: 800;
+}
+
+h2 {
+  margin-bottom: 18px;
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1.18;
+  font-weight: 760;
+}
+
+h3 {
+  margin-bottom: 12px;
+  font-size: clamp(19px, 1.45vw, 24px);
+  line-height: 1.3;
+  font-weight: 740;
+}
+
+p,
+li {
+  font-size: clamp(15px, 1vw, 17px);
+  line-height: 1.72;
+  font-weight: 400;
+}
+
+.eyebrowText,
+.findingCard span,
+.problemCard span,
+.personaCard span,
+.strategyCard span,
+.decisionCard span,
+.flowFocusGrid span,
+.flowNumber {
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 900;
+}
+
+.sectionHeading {
+  max-width: 780px;
+  margin-bottom: clamp(38px, 4.4vw, 56px);
+}
+
+.sectionHeading > p:not(.eyebrowText),
+.heroLead,
+.largeParagraph,
+.statementText {
+  font-weight: 500;
+}
+
+.heroLead {
+  max-width: 600px;
+  font-size: clamp(17px, 1.45vw, 20px);
+  line-height: 1.74;
+}
+
+.largeParagraph,
+.statementText {
+  font-size: clamp(18px, 1.65vw, 23px);
+  line-height: 1.62;
+}
+
+.problemCard h3,
+.findingCard h3,
+.strategyCard h3,
+.decisionCard h3,
+.flowContent h3 {
+  font-size: clamp(19px, 1.45vw, 24px);
+  line-height: 1.34;
+  font-weight: 780;
+}
+
+.flowContent h3 {
+  margin-bottom: 14px;
+}
+
+.flowLead {
+  margin-bottom: 22px;
+  font-size: clamp(16px, 1.16vw, 18px);
+  line-height: 1.68;
+  font-weight: 520;
+}
+
+.flowFocusGrid p,
+.flowHighlightList li,
+.flowDetail dd {
+  font-size: clamp(14px, 0.95vw, 16px);
+  line-height: 1.62;
+}
+
+.personaCard h3 {
+  font-size: clamp(26px, 2.6vw, 38px);
+  line-height: 1.16;
+  font-weight: 760;
+}
+
+.closingInner p {
+  font-size: clamp(30px, 3.8vw, 50px);
+  line-height: 1.14;
+  font-weight: 800;
+}
+
+@media (max-width: 1180px) {
+  .mainFlowSection .sectionInner {
+    width: min(100% - 40px, 1080px);
+  }
+
+  .mainFlowSection .flowArticle {
+    grid-template-columns: 1fr;
+  }
+
+  .mainFlowSection .flowArticle:nth-child(even) {
+    grid-template-columns: 1fr;
+  }
+
+  .flowContent,
+  .flowArticle:nth-child(even) .flowContent {
+    max-width: 760px;
+    justify-self: start;
+  }
+
+  .flowArticle[data-flow-key="home"] .mockupGrid,
+  .flowArticle[data-flow-key="explore"] .mockupGrid,
+  .flowArticle[data-flow-key="vote"] .mockupGrid,
+  .flowArticle[data-flow-key="plan"] .mockupGrid,
+  .flowArticle[data-flow-key="onboard"] .mockupGrid,
+  .flowArticle[data-flow-key="crew"] .mockupGrid,
+  .flowArticle[data-flow-key="prepare"] .mockupGrid,
+  .flowArticle[data-flow-key="update"] .mockupGrid,
+  .flowArticle[data-flow-key="archive"] .mockupGrid {
+    --flowSlotWidth: clamp(208px, 26vw, 268px);
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 208px), 1fr));
+    max-width: 900px;
+    min-height: auto;
+  }
+
+  .mainFlowSection .flowArticle .mockupGrid .screenSlot {
+    transform: none !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .siteNav {
+    gap: 10px;
+  }
+
+  .navPrototypeButton {
+    flex: 0 1 auto;
+    max-width: 148px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .mainFlowSection .sectionInner {
+    width: min(100% - 28px, 640px);
+  }
+
+  .mainFlowSection .flowArticle {
+    padding: 50px 0;
+  }
+
+  h1 {
+    font-size: clamp(31px, 9vw, 42px);
+  }
+
+  h2 {
+    font-size: clamp(24px, 7.2vw, 32px);
+  }
+
+  .flowArticle[data-flow-key="home"] .mockupGrid,
+  .flowArticle[data-flow-key="explore"] .mockupGrid,
+  .flowArticle[data-flow-key="vote"] .mockupGrid,
+  .flowArticle[data-flow-key="plan"] .mockupGrid,
+  .flowArticle[data-flow-key="onboard"] .mockupGrid,
+  .flowArticle[data-flow-key="crew"] .mockupGrid,
+  .flowArticle[data-flow-key="prepare"] .mockupGrid,
+  .flowArticle[data-flow-key="update"] .mockupGrid,
+  .flowArticle[data-flow-key="archive"] .mockupGrid {
+    --flowSlotWidth: min(100%, 318px);
+    grid-template-columns: minmax(0, var(--flowSlotWidth));
+    max-width: var(--flowSlotWidth);
+    gap: 22px;
+  }
+}
