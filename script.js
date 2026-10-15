@@ -282,10 +282,20 @@ function createAsset(asset) {
     <div class="assetSurface">${source ? `<img src="${source}" alt="${asset.label} 화면" loading="lazy" decoding="async" />` : `<div class="neutralSlot" role="img" aria-label="${asset.label} 이미지 영역"><span class="slotMark" aria-hidden="true">STAG</span><span>${asset.label}</span></div>`}</div><figcaption>${asset.label}</figcaption></figure>`;
 }
 
+function createFeatureTitle(step) {
+  const accents = {
+    onboard: "어렵지 않게.", home: "한눈에 확인해요.", explore: "공연장 주변",
+    crew: "준비도 함께.", vote: "투표로 정해요.", prepare: "티켓은?",
+    plan: "하루를 계획해요.", update: "놓치지 않게.", archive: "우리의 기록",
+  };
+  const accent = accents[step.key];
+  return accent ? step.title.replace(accent, `<span class="featureAccent">${accent}</span>`) : step.title;
+}
+
 function renderFlowSteps() {
   const list = document.getElementById('flowList');
   if (!list) return;
-  list.innerHTML = flowSteps.map(step => `<article class="featureStory revealItem ${step.featured ? 'featureMajor' : 'featureCompact'} feature-${step.key}" id="${step.key}" data-flow-key="${step.key}"><div class="featureCopy"><p class="featureLabel">${step.number} / ${step.label}</p><h3>${step.title}</h3><p>${step.copy}</p>${step.key === 'explore' ? '<a class="textLink" href="#plan">하루의 플랜으로 이어보기 →</a>' : ''}</div><div class="featureStage">${step.assets.map(createAsset).join('')}</div></article>`).join('');
+  list.innerHTML = flowSteps.map(step => `<article class="featureStory revealItem ${step.featured ? 'featureMajor' : 'featureCompact'} feature-${step.key}" id="${step.key}" data-flow-key="${step.key}"><div class="featureCopy"><p class="featureLabel">${step.number} / ${step.label}</p><h3>${createFeatureTitle(step)}</h3><p>${step.copy}</p>${step.key === 'explore' ? '<a class="textLink" href="#plan">하루의 플랜으로 이어보기 →</a>' : ''}</div><div class="featureStage">${step.assets.map(createAsset).join('')}</div></article>`).join('');
   list.querySelectorAll('img').forEach(img => img.addEventListener('error', () => {
     const figure = img.closest('.featureAsset');
     const label = figure.querySelector('figcaption').textContent;
@@ -511,55 +521,6 @@ function initMotion() {
   });
 }
 
-function initMockupViewer(lenis) {
-  const dialog = document.createElement("dialog");
-  dialog.className = "imageViewer";
-  dialog.setAttribute("aria-labelledby", "viewerTitle");
-  dialog.innerHTML = `<div class="viewerHeader"><h2 id="viewerTitle">화면 자세히 보기</h2><button class="viewerClose" type="button" aria-label="화면 닫기">×</button></div><div class="viewerBody" data-lenis-prevent><img alt="" /></div>`;
-  document.body.append(dialog);
-  const image = dialog.querySelector("img");
-  let opener = null;
-  document.querySelectorAll(".featureAsset.hasImage .assetSurface, .heroMockups .phoneShell").forEach(surface => {
-    const source = surface.querySelector("img");
-    if (!source) return;
-    const button = document.createElement("button");
-    button.className = "mockupPreview";
-    button.type = "button";
-    button.setAttribute("aria-label", `${source.alt} 크게 보기`);
-    button.setAttribute("aria-haspopup", "dialog");
-    source.replaceWith(button);
-    button.append(source);
-    const hint = document.createElement("span");
-    hint.className = "previewHint";
-    hint.setAttribute("aria-hidden", "true");
-    hint.textContent = "⤢";
-    button.append(hint);
-    button.addEventListener("click", () => {
-      if (!source.naturalWidth) return;
-      opener = button;
-      image.src = source.currentSrc || source.src;
-      image.alt = source.alt;
-      dialog.querySelector("h2").textContent = source.alt;
-      lenis?.stop();
-      document.documentElement.classList.add("viewerOpen");
-      dialog.showModal();
-      dialog.querySelector(".viewerBody").scrollTop = 0;
-      if (!prefersReducedMotion) dialog.animate([{opacity: 0, transform: "translateY(12px) scale(.98)"}, {opacity: 1, transform: "none"}], {duration: 220, easing: "ease-out"});
-    });
-  });
-  dialog.querySelector(".viewerClose").addEventListener("click", () => dialog.close());
-  dialog.addEventListener("click", event => {
-    if (event.target !== dialog) return;
-    const rect = dialog.getBoundingClientRect();
-    if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
-  });
-  dialog.addEventListener("close", () => {
-    document.documentElement.classList.remove("viewerOpen");
-    lenis?.start();
-    opener?.focus({preventScroll: true});
-  });
-}
-
 function initHeader(lenis) {
   const nav = document.querySelector(".siteNav");
   const progressBar = document.querySelector(".scrollProgressBar");
@@ -627,8 +588,9 @@ function initHeader(lenis) {
       event.preventDefault();
 
       if (lenis && !prefersReducedMotion) {
-        lenis.scrollTo(target, {
-          offset: -86,
+        lenis.resize();
+        lenis.scrollTo(href === "#hero" ? 0 : target, {
+          offset: href === "#research" || href === "#hero" ? 0 : -86,
           duration: 1.15,
           easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         });
@@ -680,7 +642,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderFlowSteps();
   initDesignLinks();
   initIcons();
-  initMockupViewer(lenis);
   if (lenis && typeof lenis.resize === "function") {
     lenis.resize();
   }
